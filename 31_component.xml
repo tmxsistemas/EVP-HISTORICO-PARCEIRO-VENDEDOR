@@ -1,0 +1,20 @@
+<gadget ><level id="028" description="Principal"><container orientacao="V" tamanhoRelativo="100"><container orientacao="V" tamanhoRelativo="19.540175546415796"><simple-value id="svl_02E"><value-expression><![CDATA[<div style="position: relative; background: linear-gradient(to right, #f4437b, #f20313); border-radius: 0.375rem; overflow: hidden; text-align: center; max-height: 8.125rem;">
+    <div style="position: relative; z-index: 10; margin-bottom: 0.25rem; color: white; font-size: 2rem; line-height: 1.2; font-weight: 600;">Historico de vendedores alterados</div>
+    <div style="position: relative; z-index: 10; color: #ffffff; line-height: 1.2; font-weight: 600;"></div>
+    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor" style="position: absolute; right: 0; bottom: 0; height: 8rem; width: 8rem; margin-right: -2rem; margin-bottom: -2rem; color: #f3f3f3; opacity: 0.5;">
+      <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M3 4h13M3 8h9m-9 4h9m5-4v12m0 0l-4-4m4 4l4-4"/>
+    </svg>]]></value-expression></simple-value></container><container orientacao="V" tamanhoRelativo="81.46992546368521"><grid id="grd_02F" useNewGrid="S"><expression type="sql" data-source="MGEDS"><![CDATA[SELECT HIST.CODPARC,
+PAR.NOMEPARC,
+HIST.CODUSU,
+USU.NOMEUSU,
+HIST.CODVEND,
+VEN1.APELIDO,
+HIST.CODVENDEP,
+VEN2.APELIDO AS APELIDO_VENDEP,
+HIST.DTALTER,
+HIST.DTALTERDEP
+FROM AD_HISTPARC HIST
+INNER JOIN TGFPAR PAR ON PAR.CODPARC = HIST.CODPARC
+INNER JOIN TSIUSU USU ON USU.CODUSU = HIST.CODUSU
+LEFT JOIN TGFVEN VEN1 ON VEN1.CODVEND = HIST.CODVEND
+LEFT JOIN TGFVEN VEN2 ON VEN2.CODVEND = HIST.CODVENDEP]]></expression><metadata><field name="CODPARC" label="Cod.parceiro" type="I" visible="true" useFooter="false"></field><field name="NOMEPARC" label="Parceiro" type="S" visible="true" useFooter="false"></field><field name="CODUSU" label="Cod.usuario" type="I" visible="true" useFooter="false"></field><field name="NOMEUSU" label="Nome usuario" type="S" visible="true" useFooter="false"></field><field name="CODVEND" label="Cod,vendedor antes" type="I" visible="true" useFooter="false"></field><field name="APELIDO" label="Vendedor antes" type="S" visible="true" useFooter="false"></field><field name="CODVENDEP" label="Cod.vendedor depois" type="I" visible="true" useFooter="false"></field><field name="APELIDO_VENDEP" label="Vendedor depois" type="S" visible="true" useFooter="false"></field><field name="DTALTER" label="Dt. Antes" type="D" visible="true" useFooter="false"></field><field name="DTALTERDEP" label="Dt.depois" type="D" visible="true" useFooter="false"></field></metadata></grid></container></container></level></gadget>

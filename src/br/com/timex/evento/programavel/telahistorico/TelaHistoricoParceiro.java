@@ -42,7 +42,7 @@ public class TelaHistoricoParceiro {
 		
 	}
 
-	public void lancarHistoricoParceiro2(BigDecimal codparc, BigDecimal codVendAntes, BigDecimal codVendDepois,
+public void lancarHistoricoParceiro2(BigDecimal codparc, BigDecimal codVendAntes, BigDecimal codVendDepois,
 	        Timestamp dataAntesAlteracao, Timestamp dataDepoisAlteracao, BigDecimal usuarioLogadoID) throws Exception {
 	    
 	    final EntityFacade entityFacade = EntityFacadeFactory.getDWFFacade();
